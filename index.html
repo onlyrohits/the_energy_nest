@@ -263,30 +263,56 @@
 </main>
 
 <script>
-  // NOTE: GitHub Pages is static hosting only — there's no server to receive
-  // this form. Wire it up to a form service (Formspree, Getform, Buttondown,
-  // ConvertKit, etc.) by replacing the action logic below with a fetch() call
-  // to that service's endpoint. Until then this shows a friendly confirmation
-  // and does not actually store the email anywhere.
   const form = document.getElementById('notify-form');
   const status = document.getElementById('form-status');
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const email = document.getElementById('email').value.trim();
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value.trim();
     if (!email) return;
 
-    // --- Replace this block with your form service call, e.g.: ---
-    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //   method: 'POST',
-    //   headers: { 'Accept': 'application/json' },
-    //   body: new FormData(form)
-    // });
+    // Change button text to show loading state
+    const btn = form.querySelector('button');
+    const originalBtnText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
-    status.textContent = "You're on the list — we'll be in touch soon.";
-    form.reset();
+    // Send to Web3Forms using your access key
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        access_key: '9432171b-d458-4792-8483-b21ce812bea2',
+        email: email,
+        subject: 'New Waitlist Signup: The Energy Nest',
+        from_name: 'The Energy Nest Website'
+      })
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status == 200) {
+        status.textContent = "You're on the list — we'll be in touch soon.";
+        form.reset();
+      } else {
+        console.log(response);
+        status.textContent = json.message || "Something went wrong. Please try again.";
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      status.textContent = "Something went wrong. Please try again.";
+    })
+    .finally(() => {
+      btn.textContent = originalBtnText;
+      btn.disabled = false;
+    });
   });
 </script>
+
 
 </body>
 </html>
