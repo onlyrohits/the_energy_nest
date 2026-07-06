@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Energy Nest — Coming Soon</title>
+<meta name="description" content="The Energy Nest is being woven — a home for reiki, energy work, and soul-level guidance. Opening soon.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,400;1,500;1,600&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg-deep: #241a16;
+    --bg-soft: #2f2119;
+    --amber: #f0a857;
+    --amber-dim: #c98a4a;
+    --moss: #7c8c6b;
+    --parchment: #f1e7d8;
+    --parchment-dim: #c9bba6;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  body {
+    background:
+      radial-gradient(120% 90% at 50% 15%, var(--bg-soft) 0%, var(--bg-deep) 60%);
+    color: var(--parchment);
+    font-family: 'Karla', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 560px;
+    padding: 64px 32px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: 'Karla', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin: 0 0 40px;
+  }
+
+  /* --- signature nest --- */
+  .nest-wrap {
+    width: 260px;
+    max-width: 70vw;
+    margin-bottom: 36px;
+    position: relative;
+  }
+
+  .nest-wrap svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+  .glow-core {
+    transform-origin: 160px 148px;
+    animation: breathe 5.2s ease-in-out infinite;
+  }
+
+  .mote {
+    animation: rise 6s ease-in infinite;
+  }
+  .mote-1 { animation-delay: 0s; }
+  .mote-2 { animation-delay: 1.8s; }
+  .mote-3 { animation-delay: 3.4s; }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(0.94); opacity: 0.75; }
+    50%      { transform: scale(1.08); opacity: 1; }
+  }
+
+  @keyframes rise {
+    0%   { transform: translateY(0px);   opacity: 0; }
+    15%  { opacity: 0.9; }
+    85%  { opacity: 0; }
+    100% { transform: translateY(-46px); opacity: 0; }
+  }
+
+  /* --- copy --- */
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.18;
+    margin: 0 0 18px;
+    color: var(--parchment);
+    letter-spacing: -0.01em;
+  }
+
+  p.sub {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--parchment-dim);
+    max-width: 420px;
+    margin: 0 0 40px;
+  }
+
+  p.sub strong {
+    color: var(--parchment);
+    font-weight: 500;
+  }
+
+  /* --- form --- */
+  form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  input[type="email"] {
+    flex: 1;
+    min-width: 0;
+    background: rgba(241, 231, 216, 0.06);
+    border: 1px solid rgba(241, 231, 216, 0.2);
+    border-radius: 999px;
+    padding: 13px 20px;
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    color: var(--parchment);
+  }
+
+  input[type="email"]::placeholder { color: var(--parchment-dim); }
+
+  input[type="email"]:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+    border-color: var(--amber);
+  }
+
+  button {
+    background: var(--amber);
+    color: var(--bg-deep);
+    border: none;
+    border-radius: 999px;
+    padding: 13px 24px;
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+
+  button:hover { background: var(--amber-dim); }
+  button:active { transform: scale(0.97); }
+
+  button:focus-visible {
+    outline: 2px solid var(--parchment);
+    outline-offset: 2px;
+  }
+
+  .status {
+    font-size: 14px;
+    color: var(--moss);
+    min-height: 20px;
+    margin: -6px 0 8px;
+  }
+
+  footer {
+    margin-top: 28px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--parchment-dim);
+    opacity: 0.7;
+  }
+
+  footer a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  footer a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+
+  @media (max-width: 420px) {
+    form { flex-direction: column; }
+    button { width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glow-core, .mote { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+  <p class="eyebrow">Coming Soon</p>
+
+  <div class="nest-wrap" aria-hidden="true">
+    <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"  stop-color="#f0a857" stop-opacity="0.95"/>
+          <stop offset="55%" stop-color="#f0a857" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#f0a857" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.2"/>
+        </filter>
+      </defs>
+
+      <!-- rising energy motes -->
+      <circle class="mote mote-1" cx="120" cy="90" r="2.4" fill="#f0a857"/>
+      <circle class="mote mote-2" cx="165" cy="70" r="1.8" fill="#f1e7d8"/>
+      <circle class="mote mote-3" cx="200" cy="95" r="2.1" fill="#f0a857"/>
+
+      <!-- woven nest strands -->
+      <path d="M34,150 C 60,206 260,206 286,150" fill="none" stroke="#7c8c6b" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+      <path d="M50,141 C 88,182 232,182 270,141" fill="none" stroke="#f0a857" stroke-width="2.6" stroke-linecap="round" opacity="0.6"/>
+      <path d="M28,129 C 72,188 248,188 292,129" fill="none" stroke="#7c8c6b" stroke-width="2.2" stroke-linecap="round" opacity="0.45"/>
+      <path d="M66,160 C 128,120 192,120 254,160" fill="none" stroke="#f0a857" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+      <path d="M58,176 C 138,134 182,134 262,176" fill="none" stroke="#7c8c6b" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
+      <path d="M44,122 C 30,102 26,90 42,74" fill="none" stroke="#f0a857" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>
+      <path d="M276,122 C 290,102 294,90 278,74" fill="none" stroke="#f0a857" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>
+
+      <!-- breathing energy core -->
+      <g class="glow-core">
+        <circle cx="160" cy="148" r="34" fill="url(#coreGlow)" filter="url(#soft)"/>
+        <circle cx="160" cy="148" r="7" fill="#f1e7d8" opacity="0.9"/>
+      </g>
+    </svg>
+  </div>
+
+  <h1>A nest is being woven.</h1>
+  <p class="sub">
+    <strong>The Energy Nest</strong> is a home for reiki, energy work, and soul-level guidance — a calm space to land while you find your way back to yourself. We're building it with care. Leave your email and we'll let you know the moment the door opens.
+  </p>
+
+  <form id="notify-form">
+    <label for="email" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">Email address</label>
+    <input type="email" id="email" name="email" placeholder="Your email" required autocomplete="email">
+    <button type="submit">Notify me</button>
+  </form>
+  <p class="status" id="form-status" role="status" aria-live="polite"></p>
+
+  <footer>
+    The Energy Nest &nbsp;·&nbsp; <a href="mailto:hello@theenergynest.com">hello@theenergynest.com</a>
+  </footer>
+</main>
+
+<script>
+  // NOTE: GitHub Pages is static hosting only — there's no server to receive
+  // this form. Wire it up to a form service (Formspree, Getform, Buttondown,
+  // ConvertKit, etc.) by replacing the action logic below with a fetch() call
+  // to that service's endpoint. Until then this shows a friendly confirmation
+  // and does not actually store the email anywhere.
+  const form = document.getElementById('notify-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    if (!email) return;
+
+    // --- Replace this block with your form service call, e.g.: ---
+    // fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    //   method: 'POST',
+    //   headers: { 'Accept': 'application/json' },
+    //   body: new FormData(form)
+    // });
+
+    status.textContent = "You're on the list — we'll be in touch soon.";
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
