@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2560" height="1440" viewBox="0 0 2560 1440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Energy Nest background">
+  <title>The Energy Nest background</title>
+  
+  
+  <defs>
+    <linearGradient id="backgroundGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="54%" stop-color="#F7F3EE"/>
+      <stop offset="100%" stop-color="#EDE3D7"/>
+    </linearGradient>
+    <radialGradient id="backgroundGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D6AD57" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#D6AD57" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#D6AD57" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2560" height="1440" fill="url(#backgroundGrad)"/>
+  <circle cx="460.79999999999995" cy="230.4" r="246.23999999999998" fill="#B08BC9" fill-opacity="0.10"/>
+  <circle cx="2124.7999999999997" cy="144" r="279.936" fill="#7C96A7" fill-opacity="0.10"/>
+  <circle cx="2252.8" cy="1209.6" r="290.30400000000003" fill="#D6AD57" fill-opacity="0.10"/>
+  <circle cx="1280" cy="777.6" r="115.2" fill="url(#backgroundGlow)"/>
+  <path d="M 204.8 1051.2 C 614.4 1324.8, 1945.6 1324.8, 2355.2000000000003 1051.2" fill="none" stroke="#4E786E" stroke-width="15" stroke-linecap="round" opacity="0.82"/>
+  <path d="M 307.2 1007.9999999999999 C 563.2 1152, 1996.8000000000002 1152, 2252.8 1007.9999999999999" fill="none" stroke="#D6AD57" stroke-width="10" stroke-linecap="round" opacity="0.58"/>
+  <path d="M 409.6 964.8000000000001 C 768 1209.6, 1792 1209.6, 2150.4 964.8000000000001" fill="none" stroke="#7C96A7" stroke-width="8" stroke-linecap="round" opacity="0.44"/>
+  <path d="M 460.79999999999995 230.4 C 358.40000000000003 144, 307.2 86.39999999999999, 256 57.6" fill="none" stroke="#D6AD57" stroke-width="6" stroke-linecap="round" opacity="0.42"/>
+  <path d="M 2099.2 230.4 C 2201.6 144, 2252.8 86.39999999999999, 2304 57.6" fill="none" stroke="#D6AD57" stroke-width="6" stroke-linecap="round" opacity="0.42"/>
+  
+</svg>
