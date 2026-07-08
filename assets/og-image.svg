@@ -1,0 +1,31 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Energy Nest">
+  <defs>
+    <linearGradient id="ogBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFDF9"/>
+      <stop offset="55%" stop-color="#F7F3EE"/>
+      <stop offset="100%" stop-color="#EDE3D7"/>
+    </linearGradient>
+    <radialGradient id="ogGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D6AD57" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#D6AD57" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#D6AD57" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+  <circle cx="200" cy="120" r="140" fill="#B08BC9" fill-opacity="0.10"/>
+  <circle cx="1030" cy="90" r="160" fill="#7C96A7" fill-opacity="0.10"/>
+  <circle cx="1040" cy="520" r="180" fill="#D6AD57" fill-opacity="0.10"/>
+  <g transform="translate(88 114)">
+    <path d="M52 220c34 74 114 110 160 110s126-36 160-110" fill="none" stroke="#4E786E" stroke-width="16" stroke-linecap="round"/>
+    <path d="M82 200c45 42 87 64 130 64s85-22 130-64" fill="none" stroke="#D6AD57" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+    <path d="M70 174c52 54 102 84 142 84s90-30 142-84" fill="none" stroke="#B08BC9" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="210" cy="142" r="56" fill="url(#ogGlow)"/>
+    <circle cx="210" cy="142" r="14" fill="#FFFDF9"/>
+    <path d="M72 152c8-44 32-70 62-98" fill="none" stroke="#D6AD57" stroke-width="7" stroke-linecap="round" opacity="0.56"/>
+    <path d="M350 152c-8-44-32-70-62-98" fill="none" stroke="#D6AD57" stroke-width="7" stroke-linecap="round" opacity="0.56"/>
+  </g>
+  <text x="530" y="206" fill="#20302C" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-style="italic" letter-spacing="-2">The Energy Nest</text>
+  <text x="530" y="270" fill="#5F6F68" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="1">A calm place to land between deploys.</text>
+  <text x="530" y="342" fill="#4E786E" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">SUPPORTIVE GUIDANCE • REIKI • AKASHIC RECORDS</text>
+  <text x="530" y="388" fill="#4E786E" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">MEDITATE TOGETHER • SET A GOOD INTENTION</text>
+</svg>

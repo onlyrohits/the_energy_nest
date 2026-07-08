@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <html lang="en" data-page="services">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booked - The Energy Nest</title>
+    <meta name="description" content="Post-payment confirmation and scheduling for The Energy Nest sessions.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#F7F3EE">
+    <link rel="canonical" href="https://theenergynest.com/booked/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Booked - The Energy Nest">
+    <meta property="og:description" content="Post-payment confirmation and scheduling for The Energy Nest sessions.">
+    <meta property="og:url" content="https://theenergynest.com/booked/">
+    <meta property="og:image" content="https://theenergynest.com/assets/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Booked - The Energy Nest">
+    <meta name="twitter:description" content="Post-payment confirmation and scheduling for The Energy Nest sessions.">
+    <meta name="twitter:image" content="https://theenergynest.com/assets/og-image.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,400;1,500&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../styles.css">
+    <script defer src="../assets/config.js"></script>
+    <script defer src="../assets/services.js"></script>
+    <script defer src="../main.js"></script>
+    </head>
+    <body data-prefix="../" class="booking-page">
+      <main class="site-shell">
+        <header class="site-header panel">
+  <a class="brand" href="../index.html">
+    <img class="brand-mark" src="../assets/nest.svg" alt="" width="44" height="44">
+    <span class="brand-copy">
+      <strong>The Energy Nest</strong>
+      <span>A calm place to land between deploys.</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <a class="nav-link" data-nav-link href="../index.html">Home</a>
+    <a class="nav-link" data-nav-link href="../services/" aria-current="page">Services</a>
+    <a class="nav-link" data-nav-link href="../about/">About</a>
+    <a class="nav-link" data-nav-link href="../faq/">FAQ</a>
+    <a class="nav-button" href="../services/">Book</a>
+  </nav>
+</header>
+        <section class="booked-hero panel" aria-labelledby="booked-title">
+  <div>
+    <p class="eyebrow">Booking complete</p>
+    <h1 id="booked-title" data-booked-title>Thanks. Your next step is to pick a time.</h1>
+    <p class="lead" data-booked-description>If you just finished payment, choose the matching service below and schedule your 60-minute online session in your local time zone.</p>
+    <div class="pill-row">
+      <span class="pill">Online via video link</span>
+      <span class="pill">Local timezone</span>
+      <span class="pill">$5-$20</span>
+    </div>
+  </div>
+  <aside class="booked-meta" data-booked-summary>
+    <p><strong>No service was selected yet.</strong></p>
+    <p>Use the service chooser below, or go back to Services and pick the right session before booking.</p>
+    <ul>
+      <li>60 minutes</li>
+      <li>The scheduler shows the visitor&#x27;s local time zone.</li>
+      <li>Reschedule at least 24 hours ahead whenever possible.</li>
+    </ul>
+  </aside>
+</section>
+<section class="section panel scheduler-shell" aria-labelledby="scheduler-title" data-booked-shell>
+  <div class="section-head">
+    <p class="section-kicker">Scheduler</p>
+    <h2 id="scheduler-title">Pick your time after payment.</h2>
+    <p class="section-copy">If the embed is not configured yet, the note below will remind the operator which link to paste into <code>assets/config.js</code>.</p>
+  </div>
+  <div class="scheduler-fallback" data-booked-scheduler>
+    <p class="mini-label">Ready when configured</p>
+    <p class="sub">The scheduler will appear here once the Cal.com or Calendly link is added for the selected service.</p>
+  </div>
+  <div class="booked-chooser" data-booked-chooser><a class="button secondary" href="../services/supportive-guidance/">Supportive Guidance<span>View details</span></a><a class="button secondary" href="../services/reiki/">Reiki (Distance Session)<span>View details</span></a><a class="button secondary" href="../services/akashic-records/">Akashic Records Reading<span>View details</span></a><a class="button secondary" href="../services/meditate-together/">Meditate Together<span>View details</span></a><a class="button secondary" href="../services/set-good-intention/">Set a Good Intention<span>View details</span></a></div>
+</section>
+<section class="section panel" aria-labelledby="booked-note-title">
+  <div class="section-head">
+    <p class="section-kicker">Need to start over?</p>
+    <h2 id="booked-note-title">Return to services if the wrong page opened.</h2>
+    <p class="section-copy">This page is a friendly post-payment destination. Because the site is static, it cannot hard-enforce the gate without a backend.</p>
+  </div>
+  <div class="inline-actions">
+    <a class="button secondary" id="cancel" href="../services/">Back to services</a>
+    <a class="button ghost" href="mailto:hello@theenergynest.com">Contact support</a>
+  </div>
+</section>
+        <footer class="site-footer panel">
+  <div class="footer-brand">
+    <img class="brand-mark" src="../assets/nest.svg" alt="" width="40" height="40">
+    <div class="footer-copy">
+      <strong>The Energy Nest</strong>
+      <p class="footer-note">Complementary practices for relaxation and wellbeing. Not medical advice.</p>
+    </div>
+  </div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="../contact/">Contact</a>
+    <a href="../privacy/">Privacy</a>
+    <a href="../terms/">Terms</a>
+    <a href="../disclaimer/">Disclaimer</a>
+  </nav>
+  <div class="footer-meta">
+    <span data-current-year></span>
+    <span>Adults 18+</span>
+  </div>
+</footer>
+      </main>
+    </body>
+    </html>
