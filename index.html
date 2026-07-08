@@ -12,13 +12,22 @@
 
 <style>
   :root {
-    --bg-deep: #241a16;
-    --bg-soft: #2f2119;
-    --amber: #f0a857;
-    --amber-dim: #c98a4a;
-    --moss: #7c8c6b;
-    --parchment: #f1e7d8;
-    --parchment-dim: #c9bba6;
+    --bg: #F7F3EE;
+    --bg-soft: #FFFDF9;
+    --bg-warm: #EDE3D7;
+    --surface: rgba(255, 253, 249, 0.78);
+    --surface-strong: #FFFFFF;
+    --border: #E5D9CF;
+    --text: #2F3A37;
+    --text-muted: #5F6F68;
+    --primary: #8FAF9A;
+    --primary-hover: #7B9E88;
+    --secondary: #8FB7C8;
+    --accent: #C7B3D8;
+    --highlight: #D9B56B;
+    --highlight-soft: #F3E2BA;
+    --focus: rgba(143, 175, 154, 0.35);
+    --shadow: 0 18px 40px rgba(47, 58, 55, 0.10);
   }
 
   * { box-sizing: border-box; }
@@ -31,8 +40,11 @@
 
   body {
     background:
-      radial-gradient(120% 90% at 50% 15%, var(--bg-soft) 0%, var(--bg-deep) 60%);
-    color: var(--parchment);
+      radial-gradient(100% 80% at 14% 18%, rgba(143, 183, 200, 0.12) 0%, transparent 44%),
+      radial-gradient(110% 85% at 86% 12%, rgba(199, 179, 216, 0.16) 0%, transparent 42%),
+      radial-gradient(120% 90% at 50% 110%, rgba(217, 181, 107, 0.10) 0%, transparent 42%),
+      linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 54%, var(--bg-warm) 100%);
+    color: var(--text);
     font-family: 'Karla', sans-serif;
     min-height: 100vh;
     display: flex;
@@ -57,7 +69,7 @@
     font-weight: 600;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--moss);
+    color: var(--primary);
     margin: 0 0 40px;
   }
 
@@ -103,20 +115,20 @@
     font-size: clamp(30px, 6vw, 44px);
     line-height: 1.18;
     margin: 0 0 18px;
-    color: var(--parchment);
+    color: var(--text);
     letter-spacing: -0.01em;
   }
 
   p.sub {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--parchment-dim);
+    color: var(--text-muted);
     max-width: 420px;
     margin: 0 0 40px;
   }
 
   p.sub strong {
-    color: var(--parchment);
+    color: var(--text);
     font-weight: 500;
   }
 
@@ -132,26 +144,27 @@
   input[type="email"] {
     flex: 1;
     min-width: 0;
-    background: rgba(241, 231, 216, 0.06);
-    border: 1px solid rgba(241, 231, 216, 0.2);
+    background: var(--surface-strong);
+    border: 1px solid var(--border);
     border-radius: 999px;
     padding: 13px 20px;
     font-family: 'Karla', sans-serif;
     font-size: 15px;
-    color: var(--parchment);
+    color: var(--text);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
   }
 
-  input[type="email"]::placeholder { color: var(--parchment-dim); }
+  input[type="email"]::placeholder { color: var(--text-muted); }
 
   input[type="email"]:focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--focus);
     outline-offset: 2px;
-    border-color: var(--amber);
+    border-color: var(--primary);
   }
 
   button {
-    background: var(--amber);
-    color: var(--bg-deep);
+    background: var(--primary);
+    color: var(--text);
     border: none;
     border-radius: 999px;
     padding: 13px 24px;
@@ -161,19 +174,20 @@
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 10px 24px rgba(143, 175, 154, 0.18);
   }
 
-  button:hover { background: var(--amber-dim); }
+  button:hover { background: var(--primary-hover); }
   button:active { transform: scale(0.97); }
 
   button:focus-visible {
-    outline: 2px solid var(--parchment);
+    outline: 2px solid var(--highlight);
     outline-offset: 2px;
   }
 
   .status {
     font-size: 14px;
-    color: var(--moss);
+    color: var(--secondary);
     min-height: 20px;
     margin: -6px 0 8px;
   }
@@ -183,7 +197,7 @@
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--parchment-dim);
+    color: var(--text-muted);
     opacity: 0.7;
   }
 
@@ -193,7 +207,7 @@
     text-underline-offset: 3px;
   }
 
-  footer a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+  footer a:focus-visible { outline: 2px solid var(--highlight); outline-offset: 2px; }
 
   @media (max-width: 420px) {
     form { flex-direction: column; }
@@ -214,9 +228,9 @@
     <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%"  stop-color="#f0a857" stop-opacity="0.95"/>
-          <stop offset="55%" stop-color="#f0a857" stop-opacity="0.35"/>
-          <stop offset="100%" stop-color="#f0a857" stop-opacity="0"/>
+          <stop offset="0%"  stop-color="#D9B56B" stop-opacity="0.95"/>
+          <stop offset="55%" stop-color="#D9B56B" stop-opacity="0.30"/>
+          <stop offset="100%" stop-color="#D9B56B" stop-opacity="0"/>
         </radialGradient>
         <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="2.2"/>
@@ -224,23 +238,23 @@
       </defs>
 
       <!-- rising energy motes -->
-      <circle class="mote mote-1" cx="120" cy="90" r="2.4" fill="#f0a857"/>
-      <circle class="mote mote-2" cx="165" cy="70" r="1.8" fill="#f1e7d8"/>
-      <circle class="mote mote-3" cx="200" cy="95" r="2.1" fill="#f0a857"/>
+      <circle class="mote mote-1" cx="120" cy="90" r="2.4" fill="#8FAF9A"/>
+      <circle class="mote mote-2" cx="165" cy="70" r="1.8" fill="#C7B3D8"/>
+      <circle class="mote mote-3" cx="200" cy="95" r="2.1" fill="#D9B56B"/>
 
       <!-- woven nest strands -->
-      <path d="M34,150 C 60,206 260,206 286,150" fill="none" stroke="#7c8c6b" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
-      <path d="M50,141 C 88,182 232,182 270,141" fill="none" stroke="#f0a857" stroke-width="2.6" stroke-linecap="round" opacity="0.6"/>
-      <path d="M28,129 C 72,188 248,188 292,129" fill="none" stroke="#7c8c6b" stroke-width="2.2" stroke-linecap="round" opacity="0.45"/>
-      <path d="M66,160 C 128,120 192,120 254,160" fill="none" stroke="#f0a857" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
-      <path d="M58,176 C 138,134 182,134 262,176" fill="none" stroke="#7c8c6b" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
-      <path d="M44,122 C 30,102 26,90 42,74" fill="none" stroke="#f0a857" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>
-      <path d="M276,122 C 290,102 294,90 278,74" fill="none" stroke="#f0a857" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>
+      <path d="M34,150 C 60,206 260,206 286,150" fill="none" stroke="#8FAF9A" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+      <path d="M50,141 C 88,182 232,182 270,141" fill="none" stroke="#D9B56B" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
+      <path d="M28,129 C 72,188 248,188 292,129" fill="none" stroke="#8FB7C8" stroke-width="2.2" stroke-linecap="round" opacity="0.45"/>
+      <path d="M66,160 C 128,120 192,120 254,160" fill="none" stroke="#C7B3D8" stroke-width="1.8" stroke-linecap="round" opacity="0.42"/>
+      <path d="M58,176 C 138,134 182,134 262,176" fill="none" stroke="#8FAF9A" stroke-width="1.8" stroke-linecap="round" opacity="0.35"/>
+      <path d="M44,122 C 30,102 26,90 42,74" fill="none" stroke="#D9B56B" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
+      <path d="M276,122 C 290,102 294,90 278,74" fill="none" stroke="#D9B56B" stroke-width="2.4" stroke-linecap="round" opacity="0.5"/>
 
       <!-- breathing energy core -->
       <g class="glow-core">
         <circle cx="160" cy="148" r="34" fill="url(#coreGlow)" filter="url(#soft)"/>
-        <circle cx="160" cy="148" r="7" fill="#f1e7d8" opacity="0.9"/>
+        <circle cx="160" cy="148" r="7" fill="#FFFDF9" opacity="0.92"/>
       </g>
     </svg>
   </div>
