@@ -1,3 +1,69 @@
+// Service types describe the work.
+// Purchase options describe how people buy the work.
+window.EnergyNestOffers = [
+  {
+    "slug": "four-pack",
+    "pricingKey": "fourPack",
+    "title": "4-session package",
+    "badge": "Most popular",
+    "summary": "Best for steady momentum and the offer to steer toward.",
+    "note": "About $100/session.",
+    "ctaLabel": "Choose package",
+    "directoryOrder": 1
+  },
+  {
+    "slug": "single-session",
+    "pricingKey": "singleSession",
+    "title": "Single session (60 min)",
+    "badge": "Standard",
+    "summary": "The standard list price for one focused hour.",
+    "note": "A single 60-minute session.",
+    "ctaLabel": "Choose single session",
+    "directoryOrder": 2
+  },
+  {
+    "slug": "membership",
+    "pricingKey": "membership",
+    "title": "Monthly membership",
+    "badge": "Recurring",
+    "summary": "2 sessions/mo + async check-in.",
+    "note": "Recurring billing.",
+    "ctaLabel": "Choose membership",
+    "directoryOrder": 3
+  },
+  {
+    "slug": "intro-session",
+    "pricingKey": "introOffer",
+    "title": "Intro offer",
+    "badge": "First session only",
+    "summary": "A softer first session for people who want to try the work.",
+    "note": "One-time only, once per client.",
+    "ctaLabel": "Choose intro offer",
+    "directoryOrder": 4
+  },
+  {
+    "slug": "scholarship",
+    "pricingKey": "scholarship",
+    "title": "Scholarship / equity spot",
+    "badge": "Limited",
+    "summary": "A few spots each month, not the default menu.",
+    "note": "$40-$60 range.",
+    "ctaLabel": "Ask about scholarship",
+    "directoryOrder": 5
+  },
+  {
+    "slug": "founding-session",
+    "pricingKey": "foundingSingle",
+    "title": "Founding member session",
+    "badge": "Founding pricing",
+    "summary": "First 20 clients only.",
+    "note": "$90/session.",
+    "ctaLabel": "Use founding pricing",
+    "directoryOrder": 0,
+    "promoOnly": true
+  }
+];
+
 window.EnergyNestServices = [
   {
     "slug": "supportive-guidance",
@@ -13,7 +79,14 @@ window.EnergyNestServices = [
     "badge": "Grounding support",
     "paymentKey": "supportive-guidance",
     "schedulerKey": "supportive-guidance",
-    "priceNote": "Sliding scale contribution: $5-$20.",
+    "purchaseOptions": [
+      "four-pack",
+      "single-session",
+      "membership",
+      "intro-session",
+      "scholarship"
+    ],
+    "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A steady place to talk, sort, and exhale without having to perform being okay.",
     "whatHappens": [
       "Settle in and name what is taking up the most bandwidth.",
@@ -40,9 +113,8 @@ window.EnergyNestServices = [
       "If you are in crisis in the US, call or text 988."
     ],
     "longDescription": "A calm conversation space to make sense of pressure, decision fatigue, and the feeling that you are always one tab away from collapse. Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_SUPPORTIVE_GUIDANCE",
-    "calLink": "https://cal.com/REPLACE_WITH_SUPPORTIVE_GUIDANCE",
-    "iconSvg": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path d=\"M12 14h24a4 4 0 014 4v10a4 4 0 01-4 4H24l-8 6v-6h-4a4 4 0 01-4-4V18a4 4 0 014-4z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M18 22h12M18 27h8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>"
+    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_SUPPORTIVE_GUIDANCE",
+    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_SUPPORTIVE_GUIDANCE"
   },
   {
     "slug": "reiki",
@@ -58,7 +130,14 @@ window.EnergyNestServices = [
     "badge": "Energy reset",
     "paymentKey": "reiki",
     "schedulerKey": "reiki",
-    "priceNote": "Sliding scale contribution: $5-$20.",
+    "purchaseOptions": [
+      "four-pack",
+      "single-session",
+      "membership",
+      "intro-session",
+      "scholarship"
+    ],
+    "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A quiet distance session meant to support rest, breath, and receptive attention.",
     "whatHappens": [
       "You arrive, get comfortable, and do less.",
@@ -84,14 +163,13 @@ window.EnergyNestServices = [
       "Reiki is a complementary practice for relaxation and wellbeing."
     ],
     "longDescription": "Gentle energy work designed to help you soften, settle, and receive without having to perform or explain. A restful distance session for screen fatigue, tension, and the kind of stress that does not clock out when you do.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_REIKI",
-    "calLink": "https://cal.com/REPLACE_WITH_REIKI",
-    "iconSvg": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"24\" r=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"24\" cy=\"24\" r=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.5\"/><path d=\"M24 6v6M24 36v6M6 24h6M36 24h6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg>"
+    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_REIKI",
+    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_REIKI"
   },
   {
     "slug": "akashic-records",
     "title": "Akashic Records Reading",
-    "tagline": "Clarity when \u201cis this the right path?\u201d will not quiet down.",
+    "tagline": "Clarity when “is this the right path?” will not quiet down.",
     "blurb": "Reflective insight for direction, meaning, and the questions that stay open long after the meeting ends.",
     "intro": "A contemplative reading space for pattern spotting, meaning-making, and a steadier look at what is asking for your attention.",
     "cardTags": [
@@ -102,7 +180,14 @@ window.EnergyNestServices = [
     "badge": "Clarity work",
     "paymentKey": "akashic-records",
     "schedulerKey": "akashic-records",
-    "priceNote": "Sliding scale contribution: $5-$20.",
+    "purchaseOptions": [
+      "four-pack",
+      "single-session",
+      "membership",
+      "intro-session",
+      "scholarship"
+    ],
+    "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A reflective reading for the questions that do not need a quick answer but do need a gentler one.",
     "whatHappens": [
       "Bring one question or theme you want to explore.",
@@ -128,9 +213,8 @@ window.EnergyNestServices = [
       "Readings are reflective, not predictive guarantees."
     ],
     "longDescription": "A contemplative reading space for pattern spotting, meaning-making, and a steadier look at what is asking for your attention. Reflective insight for direction, meaning, and the questions that stay open long after the meeting ends.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_AKASHIC_RECORDS",
-    "calLink": "https://cal.com/REPLACE_WITH_AKASHIC_RECORDS",
-    "iconSvg": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path d=\"M11 16c4-2 8-3 13-3s9 1 13 3v16c-4-2-8-3-13-3s-9 1-13 3z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M24 13v20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M17 18h5M26 18h5M17 24h6M26 24h5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/></svg>"
+    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_AKASHIC_RECORDS",
+    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_AKASHIC_RECORDS"
   },
   {
     "slug": "meditate-together",
@@ -146,7 +230,14 @@ window.EnergyNestServices = [
     "badge": "Shared pause",
     "paymentKey": "meditate-together",
     "schedulerKey": "meditate-together",
-    "priceNote": "Sliding scale contribution: $5-$20.",
+    "purchaseOptions": [
+      "four-pack",
+      "single-session",
+      "membership",
+      "intro-session",
+      "scholarship"
+    ],
+    "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A grounded practice where nothing needs to be impressive and nothing needs to be forced.",
     "whatHappens": [
       "Arrive, breathe, and let the pace slow.",
@@ -172,9 +263,8 @@ window.EnergyNestServices = [
       "You do not have to do this perfectly to get something from it."
     ],
     "longDescription": "A guided meditation circle with breathing, silence, and a gentle closing that feels like a soft landing. A shared 60-minute practice for people who want company while they slow down and let their nervous system unclench.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_MEDITATE_TOGETHER",
-    "calLink": "https://cal.com/REPLACE_WITH_MEDITATE_TOGETHER",
-    "iconSvg": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path d=\"M12 30c3-8 8-12 12-12s9 4 12 12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M9 34h30\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"22\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><path d=\"M15 15c3-4 6-6 9-6s6 2 9 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.5\" stroke-linecap=\"round\"/></svg>"
+    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_MEDITATE_TOGETHER",
+    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_MEDITATE_TOGETHER"
   },
   {
     "slug": "set-good-intention",
@@ -190,7 +280,14 @@ window.EnergyNestServices = [
     "badge": "Closing ritual",
     "paymentKey": "set-good-intention",
     "schedulerKey": "set-good-intention",
-    "priceNote": "Sliding scale contribution: $5-$20.",
+    "purchaseOptions": [
+      "four-pack",
+      "single-session",
+      "membership",
+      "intro-session",
+      "scholarship"
+    ],
+    "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A closing ritual that helps you leave the day with intention instead of carrying it everywhere.",
     "whatHappens": [
       "Reflect on what deserves to be carried forward and what can stay at the desk.",
@@ -216,8 +313,7 @@ window.EnergyNestServices = [
       "Small rituals can change the texture of the week."
     ],
     "longDescription": "A focused closing practice that turns the end of the week into a gentle threshold rather than a crash landing. A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_SET_GOOD_INTENTION",
-    "calLink": "https://cal.com/REPLACE_WITH_SET_GOOD_INTENTION",
-    "iconSvg": "<svg viewBox=\"0 0 48 48\" aria-hidden=\"true\"><path d=\"M24 8l3.7 8.6 9.2 1-6.8 6 2 9.2-8.1-4.7-8.1 4.7 2-9.2-6.8-6 9.2-1z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M24 6v6M24 36v6M6 24h6M36 24h6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"0.55\" stroke-linecap=\"round\"/></svg>"
+    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_SET_GOOD_INTENTION",
+    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_SET_GOOD_INTENTION"
   }
 ];

@@ -1021,6 +1021,63 @@ select:focus-visible {
   justify-content: space-between;
 }
 
+.offer-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.offer-actions .button {
+  width: 100%;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.offer-card.featured {
+  border-color: rgba(214, 173, 87, 0.34);
+  box-shadow: 0 18px 40px rgba(47, 58, 55, 0.10), 0 0 0 1px rgba(214, 173, 87, 0.08);
+}
+
+.offer-card .price {
+  margin-top: 0;
+}
+
+.offer-card .offer-note {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.62;
+}
+
+.founding-banner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.founding-banner[hidden] {
+  display: none !important;
+}
+
+.founding-banner .banner-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.founding-banner .banner-copy p {
+  margin: 0;
+}
+
+.founding-banner .banner-close {
+  align-self: flex-start;
+}
+
 .site-footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
