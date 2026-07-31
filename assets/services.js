@@ -6,7 +6,7 @@ window.EnergyNestOffers = [
     "pricingKey": "fourPack",
     "title": "4-session package",
     "badge": "Most popular",
-    "summary": "Best for steady momentum and the offer to steer toward.",
+    "summary": "For when you already want a little continuity.",
     "note": "About $100/session.",
     "directoryOrder": 1
   },
