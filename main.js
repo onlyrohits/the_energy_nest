@@ -177,7 +177,7 @@
       case 'four-pack':
         bullets.push(`${amountText} total.`);
         bullets.push('About $100/session.');
-        bullets.push('Best for steady momentum.');
+        bullets.push('A simple fit if you want continuity.');
         break;
       case 'single-session':
         bullets.push(`${amountText} standard list price.`);
