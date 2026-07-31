@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:assets": "node scripts/build-assets.mjs"
+    "build:assets": "node scripts/build-assets.mjs",
+    "check": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "@fontsource/fraunces": "^5.1.0",

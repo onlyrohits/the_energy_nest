@@ -32,6 +32,107 @@
     });
   }
 
+  function hasStructuredData(type) {
+    return Array.from(document.querySelectorAll('script[type="application/ld+json"]')).some((script) => {
+      const text = script.textContent || '';
+      if (!text) {
+        return false;
+      }
+
+      try {
+        const parsed = JSON.parse(text);
+        const types = Array.isArray(parsed)
+          ? parsed.map((item) => item && item['@type']).filter(Boolean)
+          : [parsed && parsed['@type']].filter(Boolean);
+        if (types.includes(type)) {
+          return true;
+        }
+      } catch (error) {
+        // Fall through to the text check below.
+      }
+
+      return text.includes(`"@type": "${type}"`);
+    });
+  }
+
+  function appendStructuredData(key, data) {
+    if (document.querySelector(`script[type="application/ld+json"][data-schema="${key}"]`)) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.dataset.schema = key;
+    script.textContent = JSON.stringify(data, null, 2);
+    document.head.appendChild(script);
+  }
+
+  function injectStructuredData() {
+    if (!hasStructuredData('Organization')) {
+      appendStructuredData('organization', {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: config.brandName || 'The Energy Nest',
+        url: config.siteUrl || 'https://theenergynest.com/',
+        email: config.supportEmail || 'hello@theenergynest.com',
+        description: 'The Energy Nest offers supportive guidance, reiki, meditation, and intention-setting for software professionals who spend all day in code and need a quieter place to land.'
+      });
+    }
+
+    if ((document.body.dataset.page || '') === 'faq' && !hasStructuredData('FAQPage')) {
+      const questions = Array.from(document.querySelectorAll('.faq-item')).map((item) => {
+        const summary = item.querySelector('summary');
+        const answer = item.querySelector('.faq-body, div');
+        return {
+          '@type': 'Question',
+          name: summary ? summary.textContent.trim() : '',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answer ? answer.textContent.trim().replace(/\\s+/g, ' ') : ''
+          }
+        };
+      }).filter((item) => item.name && item.acceptedAnswer.text);
+
+      if (questions.length) {
+        appendStructuredData('faq', {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: questions
+        });
+      }
+    }
+
+    const path = window.location.pathname;
+    const isServiceDetail = path.startsWith('/services/') && !path.endsWith('/services/') && !path.endsWith('/services/index.html');
+    if (isServiceDetail && !hasStructuredData('BreadcrumbList')) {
+      const title = document.querySelector('h1');
+      const currentName = title ? title.textContent.trim() : document.title.replace(/\\s*-\\s*The Energy Nest\\s*$/, '').trim();
+      appendStructuredData('breadcrumbs', {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${config.siteUrl || 'https://theenergynest.com'}/`
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: `${config.siteUrl || 'https://theenergynest.com'}/services/`
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: currentName,
+            item: `${config.siteUrl || 'https://theenergynest.com'}${path}`
+          }
+        ]
+      });
+    }
+  }
+
   function hydratePricing() {
     document.querySelectorAll('[data-pricing-amount]').forEach((node) => {
       const key = node.dataset.pricingAmount;
@@ -71,13 +172,19 @@
     });
   }
 
-  function getFormStatus(form) {
-    return form.querySelector('[data-form-status]') || form.parentElement && form.parentElement.querySelector('[data-form-status]');
+  function getFormFeedback(form) {
+    const success = form.querySelector('[data-form-status]') || form.parentElement && form.parentElement.querySelector('[data-form-status]');
+    const error = form.querySelector('[data-form-error]') || form.parentElement && form.parentElement.querySelector('[data-form-error]');
+    return { success, error };
   }
 
   async function sendWeb3Form(form) {
     const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
+
+    if (typeof payload.botcheck === 'string' && payload.botcheck.trim()) {
+      return { response: { ok: true, status: 200 }, data: {} };
+    }
 
     if (!payload.access_key) {
       payload.access_key = config.web3formsAccessKey;
@@ -106,7 +213,7 @@
 
   function bindForms() {
     document.querySelectorAll('form[data-web3forms-form]').forEach((form) => {
-      const status = getFormStatus(form);
+      const { success: successStatus, error: errorStatus } = getFormFeedback(form);
       const button = form.querySelector('button[type="submit"]');
       const successMessage = form.dataset.successMessage || 'Sent. We will reply soon.';
       const sendingMessage = form.dataset.sendingMessage || 'Sending...';
@@ -115,8 +222,12 @@
       form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        if (status) {
-          status.textContent = '';
+        form.dataset.state = 'sending';
+        if (successStatus) {
+          successStatus.textContent = '';
+        }
+        if (errorStatus) {
+          errorStatus.textContent = '';
         }
 
         if (button) {
@@ -127,18 +238,30 @@
         try {
           const { response, data } = await sendWeb3Form(form);
           if (response.ok || response.status === 200) {
-            if (status) {
-              status.textContent = successMessage;
+            form.dataset.state = 'success';
+            if (successStatus) {
+              successStatus.textContent = successMessage;
+            }
+            if (errorStatus) {
+              errorStatus.textContent = '';
             }
             form.reset();
           } else {
-            if (status) {
-              status.textContent = data.message || 'Something went wrong. Please try again.';
+            form.dataset.state = 'error';
+            if (errorStatus) {
+              errorStatus.textContent = data.message || 'Something went wrong. Please try again.';
+            }
+            if (successStatus) {
+              successStatus.textContent = '';
             }
           }
         } catch (error) {
-          if (status) {
-            status.textContent = 'Something went wrong. Please try again.';
+          form.dataset.state = 'error';
+          if (errorStatus) {
+            errorStatus.textContent = 'Something went wrong. Please try again.';
+          }
+          if (successStatus) {
+            successStatus.textContent = '';
           }
           console.log(error);
         } finally {
@@ -232,7 +355,7 @@
     if (config.siteUrl) {
       return `${config.siteUrl}/#newsletter`;
     }
-    return `${prefix}index.html#newsletter`;
+    return prefix ? `${prefix}#newsletter` : '/#newsletter';
   }
 
   function renderBookedPage() {
@@ -398,6 +521,7 @@
 
   setCurrentYear();
   hydratePricing();
+  injectStructuredData();
   bindForms();
   renderBookedPage();
   markCurrentNav();
