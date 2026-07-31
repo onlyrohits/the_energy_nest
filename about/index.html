@@ -3,21 +3,21 @@
     <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About - The Energy Nest</title>
-<meta name="description" content="Why The Energy Nest exists and how it stays calm, grounded, and honest.">
+<title>About The Energy Nest and the practitioner</title>
+<meta name="description" content="About The Energy Nest, the practitioner slot, and the plain principles behind the work for software people.">
 <meta name="theme-color" content="#F7F3EE">
 <link rel="canonical" href="https://theenergynest.com/about/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="About - The Energy Nest">
-<meta property="og:description" content="Why The Energy Nest exists and how it stays calm, grounded, and honest.">
+<meta property="og:title" content="About The Energy Nest and the practitioner">
+<meta property="og:description" content="About The Energy Nest, the practitioner slot, and the plain principles behind the work for software people.">
 <meta property="og:url" content="https://theenergynest.com/about/">
 <meta property="og:image" content="https://theenergynest.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Energy Nest share image">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About - The Energy Nest">
-<meta name="twitter:description" content="Why The Energy Nest exists and how it stays calm, grounded, and honest.">
+<meta name="twitter:title" content="About The Energy Nest and the practitioner">
+<meta name="twitter:description" content="About The Energy Nest, the practitioner slot, and the plain principles behind the work for software people.">
 <meta name="twitter:image" content="https://theenergynest.com/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,34 @@
 <script defer src="../main.js"></script>
 <!-- TODO(launch): add Organization JSON-LD with the real practitioner details at the same time as the bio and og:image alt text. -->
 
-</head>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://theenergynest.com/#organization",
+      "name": "The Energy Nest",
+      "url": "https://theenergynest.com/",
+      "logo": "https://theenergynest.com/assets/nest.svg",
+      "email": "hello@theenergynest.com",
+      "description": "The Energy Nest is a US-based, complementary wellbeing practice for adults 18+ who spend their days in software. It offers online reiki, supportive guidance, meditation, and intention-setting, plus one local community gathering that is waitlist-only while the format is settled. It is not medical or mental-health care.",
+      "areaServed": "US",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://theenergynest.com/#website",
+      "url": "https://theenergynest.com/",
+      "name": "The Energy Nest",
+      "publisher": {
+        "@id": "https://theenergynest.com/#organization"
+      }
+    }
+  ]
+}
+    </script>
+    </head>
     <body data-prefix="../" class="about-page">
       <a class="skip-link sr-only" href="#main-content">Skip to content</a>
       <main class="site-shell" id="main-content">
@@ -53,7 +80,7 @@
       <div class="hero-copy">
         <p class="eyebrow">A calm place to land between deploys</p>
         <h1 id="page-title">Why this exists</h1>
-        <p class="lead">The Energy Nest was built for people who keep systems alive all day and then carry the aftertaste of that pressure home. The work here stays calm, clear, and honest.</p>
+        <p class="lead">The Energy Nest is a US-based, complementary wellbeing practice for adults 18+ who spend their days in software. It offers online reiki, supportive guidance, meditation, and intention-setting, plus one local community gathering that is waitlist-only while the format is settled. It is not medical or mental-health care.</p>
         <div class="pill-row"><span class="pill">Grounded</span><span class="pill">Spacious</span><span class="pill">Honest</span><span class="pill">Plainspoken</span></div>
         <div class="hero-actions"><a class="button primary" href="../services/">See the services</a><a class="button secondary" href="../contact/">Ask a question</a></div>
       </div>
@@ -145,6 +172,7 @@
   </nav>
   <div class="footer-meta">
     <span data-current-year></span>
+    <span><time datetime="2026-07-31">Last updated July 31, 2026</time></span>
     <span>Adults 18+</span>
   </div>
 </footer>

@@ -3,45 +3,155 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supportive Guidance - The Energy Nest</title>
-    <meta name="description" content="Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.">
+    <title>Supportive guidance for engineers and founders</title>
+    <meta name="description" content="Supportive guidance for engineers and founders who want an hour of careful listening, reflection, and a clearer next step.">
     <meta name="theme-color" content="#F7F3EE">
     <link rel="canonical" href="https://theenergynest.com/services/supportive-guidance/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Supportive Guidance - The Energy Nest">
-    <meta property="og:description" content="Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.">
+    <meta property="og:title" content="Supportive guidance for engineers and founders">
+    <meta property="og:description" content="Supportive guidance for engineers and founders who want an hour of careful listening, reflection, and a clearer next step.">
     <meta property="og:url" content="https://theenergynest.com/services/supportive-guidance/">
     <meta property="og:image" content="https://theenergynest.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Energy Nest share image">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Supportive Guidance - The Energy Nest">
-    <meta name="twitter:description" content="Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.">
+    <meta name="twitter:title" content="Supportive guidance for engineers and founders">
+    <meta name="twitter:description" content="Supportive guidance for engineers and founders who want an hour of careful listening, reflection, and a clearer next step.">
     <meta name="twitter:image" content="https://theenergynest.com/assets/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/fonts/fraunces-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/karla-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,400;1,500&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../styles.css">
     <script defer src="../../assets/config.js"></script>
     <script defer src="../../assets/services.js"></script>
-    <script defer src="../../main.js"></script>
-    <script type="application/ld+json">
-    {
+    <script defer src="../../main.js"></script>    <script type="application/ld+json">
+{
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Supportive Guidance",
-  "description": "Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.",
-  "serviceType": "Supportive Guidance",
-  "provider": {
-    "@type": "Organization",
-    "name": "The Energy Nest",
-    "url": "https://theenergynest.com/",
-    "email": "hello@theenergynest.com"
-  },
-  "areaServed": "US",
-  "url": "https://theenergynest.com/services/supportive-guidance/"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://theenergynest.com/#organization",
+      "name": "The Energy Nest",
+      "url": "https://theenergynest.com/",
+      "logo": "https://theenergynest.com/assets/nest.svg",
+      "email": "hello@theenergynest.com",
+      "description": "The Energy Nest is a US-based, complementary wellbeing practice for adults 18+ who spend their days in software. It offers online reiki, supportive guidance, meditation, and intention-setting, plus one local community gathering that is waitlist-only while the format is settled. It is not medical or mental-health care.",
+      "areaServed": "US",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://theenergynest.com/#website",
+      "url": "https://theenergynest.com/",
+      "name": "The Energy Nest",
+      "publisher": {
+        "@id": "https://theenergynest.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://theenergynest.com/services/supportive-guidance/#service",
+      "name": "Supportive Guidance",
+      "serviceType": "Supportive Guidance",
+      "description": "Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.",
+      "provider": {
+        "@id": "https://theenergynest.com/#organization"
+      },
+      "areaServed": "US",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "software people in the US"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theenergynest.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://theenergynest.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Supportive guidance for engineers and founders",
+          "item": "https://theenergynest.com/services/supportive-guidance/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to talk the whole time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Quiet stretches are part of it. Some of the more useful hours have long pauses in them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I don't know what's wrong?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is a common and completely workable starting point. \"Something is off and I can't name it\" is enough to begin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this therapy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is complementary supportive listening, not clinical care, and not a substitute for seeing a professional. If what you are dealing with needs a therapist, we will say so."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep my camera off?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, always, without explanation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I talk about work specifics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Talk at whatever level of detail your obligations allow. The shape of a problem is usually enough — you rarely need to name the system or the company."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are notes kept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No session notes are taken or stored. Nothing you say leaves the hour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I want to stop early?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Say so and we stop. There is no benefit to sitting through an hour that isn't working."
+          }
+        }
+      ]
+    }
+  ]
 }
     </script>
     </head>
@@ -265,6 +375,7 @@
   </nav>
   <div class="footer-meta">
     <span data-current-year></span>
+    <span><time datetime="2026-07-31">Last updated July 31, 2026</time></span>
     <span>Adults 18+</span>
   </div>
 </footer>

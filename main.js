@@ -41,11 +41,18 @@
 
       try {
         const parsed = JSON.parse(text);
-        const types = Array.isArray(parsed)
-          ? parsed.map((item) => item && item['@type']).filter(Boolean)
-          : [parsed && parsed['@type']].filter(Boolean);
-        if (types.includes(type)) {
-          return true;
+        const queue = Array.isArray(parsed) ? [...parsed] : [parsed];
+        while (queue.length) {
+          const item = queue.shift();
+          if (!item || typeof item !== 'object') {
+            continue;
+          }
+          if (item['@type'] === type) {
+            return true;
+          }
+          if (Array.isArray(item['@graph'])) {
+            queue.push(...item['@graph']);
+          }
         }
       } catch (error) {
         // Fall through to the text check below.

@@ -3,45 +3,94 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set a Good Intention - The Energy Nest</title>
-    <meta name="description" content="A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.">
+    <title>Weekly intention-setting sessions, online</title>
+    <meta name="description" content="Weekly intention-setting sessions delivered online in 60 minutes for people who want a calm weekly close and a clear next step.">
     <meta name="theme-color" content="#F7F3EE">
     <link rel="canonical" href="https://theenergynest.com/services/set-good-intention/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Set a Good Intention - The Energy Nest">
-    <meta property="og:description" content="A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.">
+    <meta property="og:title" content="Weekly intention-setting sessions, online">
+    <meta property="og:description" content="Weekly intention-setting sessions delivered online in 60 minutes for people who want a calm weekly close and a clear next step.">
     <meta property="og:url" content="https://theenergynest.com/services/set-good-intention/">
     <meta property="og:image" content="https://theenergynest.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The Energy Nest share image">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Set a Good Intention - The Energy Nest">
-    <meta name="twitter:description" content="A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.">
+    <meta name="twitter:title" content="Weekly intention-setting sessions, online">
+    <meta name="twitter:description" content="Weekly intention-setting sessions delivered online in 60 minutes for people who want a calm weekly close and a clear next step.">
     <meta name="twitter:image" content="https://theenergynest.com/assets/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/fonts/fraunces-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/karla-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;1,400;1,500&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../../styles.css">
     <script defer src="../../assets/config.js"></script>
     <script defer src="../../assets/services.js"></script>
-    <script defer src="../../main.js"></script>
-    <script type="application/ld+json">
-    {
+    <script defer src="../../main.js"></script>    <script type="application/ld+json">
+{
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Set a Good Intention",
-  "description": "A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.",
-  "serviceType": "Set a Good Intention",
-  "provider": {
-    "@type": "Organization",
-    "name": "The Energy Nest",
-    "url": "https://theenergynest.com/",
-    "email": "hello@theenergynest.com"
-  },
-  "areaServed": "US",
-  "url": "https://theenergynest.com/services/set-good-intention/"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://theenergynest.com/#organization",
+      "name": "The Energy Nest",
+      "url": "https://theenergynest.com/",
+      "logo": "https://theenergynest.com/assets/nest.svg",
+      "email": "hello@theenergynest.com",
+      "description": "The Energy Nest is a US-based, complementary wellbeing practice for adults 18+ who spend their days in software. It offers online reiki, supportive guidance, meditation, and intention-setting, plus one local community gathering that is waitlist-only while the format is settled. It is not medical or mental-health care.",
+      "areaServed": "US",
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://theenergynest.com/#website",
+      "url": "https://theenergynest.com/",
+      "name": "The Energy Nest",
+      "publisher": {
+        "@id": "https://theenergynest.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://theenergynest.com/services/set-good-intention/#service",
+      "name": "Set a Good Intention",
+      "serviceType": "Set a Good Intention",
+      "description": "A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.",
+      "provider": {
+        "@id": "https://theenergynest.com/#organization"
+      },
+      "areaServed": "US",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "software people in the US"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theenergynest.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://theenergynest.com/services/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Weekly intention-setting sessions, online",
+          "item": "https://theenergynest.com/services/set-good-intention/"
+        }
+      ]
+    }
+  ]
 }
     </script>
     </head>
@@ -152,6 +201,7 @@
   </nav>
   <div class="footer-meta">
     <span data-current-year></span>
+    <span><time datetime="2026-07-31">Last updated July 31, 2026</time></span>
     <span>Adults 18+</span>
   </div>
 </footer>

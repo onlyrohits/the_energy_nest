@@ -1,3 +1,55 @@
+# https://theenergynest.com/robots.txt
+
 User-agent: *
 Allow: /
+Disallow: /booked/
+Disallow: /_drafts/
+
 Sitemap: https://theenergynest.com/sitemap.xml
+
+# --- Retrieval / answer engines: ALLOW. This is how citations happen. ---
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# --- User-triggered fetchers: ALLOW. A real person asked for this page. ---
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+# --- Training collectors: owner's call. Currently allowed. ---
+# TODO(owner): decide whether to keep these open. Blocking them costs
+# almost no AI-answer visibility, since the retrieval agents above are
+# separate. Small practices usually leave them open; there is no wrong answer.
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: cohere-ai
+Allow: /
+
+# --- Data-use control tokens (not crawlers) ---
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /

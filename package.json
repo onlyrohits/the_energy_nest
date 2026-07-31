@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build:assets": "node scripts/build-assets.mjs",
+    "build:sitemap": "node scripts/build-sitemap.mjs",
     "check": "node scripts/check-content.mjs"
   },
   "dependencies": {
