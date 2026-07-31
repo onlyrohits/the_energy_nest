@@ -639,6 +639,10 @@ h3 {
   background: linear-gradient(90deg, var(--primary), var(--accent));
 }
 
+.service-card:nth-child(6)::before {
+  background: linear-gradient(90deg, var(--secondary), var(--highlight));
+}
+
 .service-card:hover {
   transform: translateY(-3px);
   border-color: rgba(78, 120, 110, 0.22);

@@ -315,5 +315,46 @@ window.EnergyNestServices = [
     "longDescription": "A focused closing practice that turns the end of the week into a gentle threshold rather than a crash landing. A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.",
     "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_SET_GOOD_INTENTION",
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_SET_GOOD_INTENTION"
+  },
+  {
+    "slug": "find-purpose-together",
+    "title": "Find purpose together",
+    "tagline": "A local gathering for doing something meaningful together.",
+    "blurb": "A community-shaped pause for people who want to be off-screen, in person, and alongside other people nearby.",
+    "intro": "A slower way to share time with other people and do something meaningful together without turning it into another screen-based meeting.",
+    "cardTags": [
+      "Community",
+      "Meaning",
+      "Belonging"
+    ],
+    "badge": "Shared purpose",
+    "bookingMode": "waitlist",
+    "priceNote": "Format, location, cadence, and pricing are still being decided.",
+    "whatIs": "A community-oriented gathering for people who want companionship and shared purpose in the same room.",
+    "whatHappens": [
+      "The shape of the gathering is still being decided.",
+      "The intention is to slow down together, off-screen, in a local setting.",
+      "Details will be published only after the format and logistics are set."
+    ],
+    "whoFor": [
+      "People who want company while doing something that matters.",
+      "Anyone who wants less screen time and more shared presence.",
+      "People who prefer a local gathering over another solo session."
+    ],
+    "notFor": [
+      "Therapy or a clinical support group.",
+      "Emergency care or crisis support.",
+      "Anything that needs a guaranteed schedule before the format is decided."
+    ],
+    "practical": [
+      "This is a planned local gathering, not a 60-minute online session.",
+      "Format, cadence, location, and pricing are still TBD.",
+      "In-person safety and liability considerations need to be reviewed before launch."
+    ],
+    "notes": [
+      "TODO: decide whether this is free, donation-based, or a per-event fee.",
+      "TODO: choose the location, cadence, and in-person safety / liability process before launch."
+    ],
+    "longDescription": "A community-shaped pause for people who want to be off-screen, in person, and alongside other people nearby. A local gathering for doing something meaningful together."
   }
 ];

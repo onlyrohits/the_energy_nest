@@ -2,6 +2,7 @@ window.EnergyNestConfig = {
   "siteUrl": "https://theenergynest.com",
   "brandName": "The Energy Nest",
   "supportEmail": "hello@theenergynest.com",
+  "waitlistUrl": "https://theenergynest.com/#newsletter",
   "sessionLength": "60 minutes",
   "timezoneNote": "The scheduler shows the visitor's local time zone.",
   "web3formsAccessKey": "9432171b-d458-4792-8483-b21ce812bea2",

@@ -292,6 +292,16 @@
     `;
   }
 
+  function waitlistUrl(prefix) {
+    if (config.waitlistUrl) {
+      return config.waitlistUrl;
+    }
+    if (config.siteUrl) {
+      return `${config.siteUrl}/#newsletter`;
+    }
+    return `${prefix}index.html#newsletter`;
+  }
+
   function renderBookedPage() {
     const shell = document.querySelector('[data-booked-shell]');
     if (!shell) {
@@ -310,6 +320,7 @@
     const chooserEl = document.querySelector('[data-booked-chooser]');
     const prefix = document.body.dataset.prefix || '';
     const pageTitleBase = config.brandName || 'The Energy Nest';
+    const waitlistHref = waitlistUrl(prefix);
 
     if (offer) {
       if (titleEl) {
@@ -349,6 +360,39 @@
     }
 
     if (service) {
+      if (service.bookingMode === 'waitlist') {
+        if (titleEl) {
+          titleEl.textContent = `Thanks. ${service.title} is on the waitlist.`;
+        }
+        if (descriptionEl) {
+          descriptionEl.textContent = 'Leave your email and we will share details once the format, location, and pricing are decided.';
+        }
+        if (summaryEl) {
+          summaryEl.innerHTML = `
+            <p><strong>${escapeHtml(service.tagline)}</strong></p>
+            <ul>
+              <li>${escapeHtml(service.intro)}</li>
+              <li>Format, cadence, location, and pricing are still being decided.</li>
+              <li>This page will route to the waitlist instead of a paid booking.</li>
+            </ul>
+          `;
+        }
+        if (schedulerEl) {
+          schedulerEl.innerHTML = `
+            <div class="scheduler-fallback">
+              <p class="mini-label">Waitlist</p>
+              <p class="sub">This offering does not have a booking link yet. Join the waitlist to hear when it is ready.</p>
+              <a class="button secondary" href="${waitlistHref}">Join the waitlist</a>
+            </div>
+          `;
+        }
+        if (chooserEl) {
+          chooserEl.innerHTML = `<a class="button ghost" href="${prefix}services/${service.slug}/">View the service page</a>`;
+        }
+        document.title = `${service.title} waitlist · ${pageTitleBase}`;
+        return;
+      }
+
       if (titleEl) {
         titleEl.textContent = `Thanks. ${service.title} is ready.`;
       }
