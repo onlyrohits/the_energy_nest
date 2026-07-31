@@ -167,56 +167,6 @@ window.EnergyNestServices = [
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_REIKI"
   },
   {
-    "slug": "akashic-records",
-    "title": "Akashic Records Reading",
-    "tagline": "Clarity when “is this the right path?” will not quiet down.",
-    "blurb": "Reflective insight for direction, meaning, and the questions that stay open long after the meeting ends.",
-    "intro": "A contemplative reading space for pattern spotting, meaning-making, and a steadier look at what is asking for your attention.",
-    "cardTags": [
-      "Direction",
-      "Meaning",
-      "Insight"
-    ],
-    "badge": "Clarity work",
-    "paymentKey": "akashic-records",
-    "schedulerKey": "akashic-records",
-    "purchaseOptions": [
-      "four-pack",
-      "single-session",
-      "membership",
-      "intro-session",
-      "scholarship"
-    ],
-    "priceNote": "Premium pricing options are listed on the Services page.",
-    "whatIs": "A reflective reading for the questions that do not need a quick answer but do need a gentler one.",
-    "whatHappens": [
-      "Bring one question or theme you want to explore.",
-      "Receive reflections, patterns, and language that may help you see the situation differently.",
-      "Leave with time to integrate before you rush back into the noise."
-    ],
-    "whoFor": [
-      "Career choices and life transitions.",
-      "People who want insight beyond a checklist answer.",
-      "Anyone who is curious about meaning, not certainty."
-    ],
-    "notFor": [
-      "Guaranteed predictions.",
-      "A replacement for practical decision-making.",
-      "Emergency advice or medical care."
-    ],
-    "practical": [
-      "60-minute online session via video link.",
-      "Sessions happen in your local time zone.",
-      "Stripe handles payment before the scheduler opens."
-    ],
-    "notes": [
-      "Readings are reflective, not predictive guarantees."
-    ],
-    "longDescription": "A contemplative reading space for pattern spotting, meaning-making, and a steadier look at what is asking for your attention. Reflective insight for direction, meaning, and the questions that stay open long after the meeting ends.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_AKASHIC_RECORDS",
-    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_AKASHIC_RECORDS"
-  },
-  {
     "slug": "meditate-together",
     "title": "Meditate Together",
     "tagline": "Log off and land, live and guided, together.",
