@@ -8,7 +8,6 @@
   };
   const serviceBySlug = new Map(services.map((service) => [service.slug, service]));
   const offerBySlug = new Map(offers.map((offer) => [offer.slug, offer]));
-  const foundingDismissKey = 'the-energy-nest-founding-banner-dismissed';
 
   function escapeHtml(value) {
     return String(value)
@@ -30,16 +29,6 @@
   function setCurrentYear() {
     document.querySelectorAll('[data-current-year]').forEach((node) => {
       node.textContent = String(new Date().getFullYear());
-    });
-  }
-
-  function hydratePaymentLinks() {
-    document.querySelectorAll('[data-payment-key]').forEach((link) => {
-      const key = link.dataset.paymentKey;
-      const url = config.paymentLinks && config.paymentLinks[key];
-      if (url) {
-        link.href = url;
-      }
     });
   }
 
@@ -78,57 +67,6 @@
       const item = pricing[key];
       if (item && item.label) {
         node.textContent = item.label;
-      }
-    });
-  }
-
-  function hydrateFoundingBanner() {
-    const founding = config.foundingPricing || {};
-    const enabled = Boolean(founding.enabled);
-    const spots = Number.isFinite(Number(founding.spotsLeft)) ? Number(founding.spotsLeft) : 0;
-    const amount = pricing.foundingSingle && typeof pricing.foundingSingle.amount === 'number'
-      ? formatMoney(pricing.foundingSingle.amount)
-      : '$90';
-
-    document.querySelectorAll('[data-founding-banner]').forEach((banner) => {
-      if (!enabled) {
-        banner.hidden = true;
-        return;
-      }
-
-      try {
-        if (window.localStorage.getItem(foundingDismissKey) === '1') {
-          banner.hidden = true;
-          return;
-        }
-      } catch (error) {
-        // Ignore storage failures; the banner just stays visible.
-      }
-
-      banner.hidden = false;
-      const copy = banner.querySelector('[data-founding-banner-copy]');
-      if (copy) {
-        copy.textContent = `Founding pricing: first 20 clients pay ${amount}/session — ${spots} spots left.`;
-      }
-      const spotsNode = banner.querySelector('[data-founding-banner-spots]');
-      if (spotsNode) {
-        spotsNode.textContent = String(spots);
-      }
-      const amountNode = banner.querySelector('[data-founding-banner-amount]');
-      if (amountNode) {
-        amountNode.textContent = amount;
-      }
-      const closeButton = banner.querySelector('[data-founding-banner-close]');
-      if (closeButton && !closeButton.dataset.bound) {
-        closeButton.dataset.bound = 'true';
-        closeButton.addEventListener('click', () => {
-          banner.hidden = true;
-          try {
-            window.localStorage.setItem(foundingDismissKey, '1');
-          } catch (error) {
-            // Ignore storage failures.
-          }
-        });
       }
     });
   }
@@ -249,22 +187,17 @@
       case 'membership':
         bullets.push(`${amountText} recurring billing.`);
         bullets.push('2 sessions per month.');
-        bullets.push('Async check-in is part of the offer.');
+        bullets.push('Nothing extra is bundled.');
         break;
       case 'intro-session':
         bullets.push(`${amountText} first session only.`);
         bullets.push('One-time only, once per client.');
         bullets.push('A softer entry point.');
         break;
-      case 'scholarship':
+      case 'supported-rate':
         bullets.push(`${amountText}`);
         bullets.push('A few spots each month.');
         bullets.push('Not the default menu.');
-        break;
-      case 'founding-session':
-        bullets.push(`${amountText} session price.`);
-        bullets.push(`${Number((config.foundingPricing || {}).spotsLeft || 0)} spots left.`);
-        bullets.push('Founding pricing for the first 20 clients.');
         break;
       default:
         bullets.push(amountText);
@@ -286,8 +219,8 @@
       <p><strong>${escapeHtml(service.tagline)}</strong></p>
       <ul>
         <li>${escapeHtml(service.intro)}</li>
-        <li>Choose a pricing option on the Services page.</li>
-        <li>After payment, the scheduler opens here.</li>
+        <li>Join the waitlist or open the service page to see the next steps.</li>
+        <li>When booking opens, the scheduler shows up here.</li>
       </ul>
     `;
   }
@@ -322,7 +255,7 @@
     const pageTitleBase = config.brandName || 'The Energy Nest';
     const waitlistHref = waitlistUrl(prefix);
 
-    if (offer) {
+      if (offer) {
       if (titleEl) {
         titleEl.textContent = `Thanks. ${offer.title} is ready.`;
       }
@@ -359,7 +292,7 @@
       return;
     }
 
-    if (service) {
+      if (service) {
       if (service.bookingMode === 'waitlist') {
         if (titleEl) {
           titleEl.textContent = `Thanks. ${service.title} is on the waitlist.`;
@@ -373,7 +306,7 @@
             <ul>
               <li>${escapeHtml(service.intro)}</li>
               <li>Format, cadence, location, and pricing are still being decided.</li>
-              <li>This page will route to the waitlist instead of a paid booking.</li>
+              <li>This page routes to the waitlist until the details are set.</li>
             </ul>
           `;
         }
@@ -430,15 +363,15 @@
     }
 
     if (titleEl) {
-      titleEl.textContent = 'You are on the booking page.';
+      titleEl.textContent = 'You are on the scheduling page.';
     }
     if (descriptionEl) {
-      descriptionEl.textContent = 'If you just completed payment, choose the matching service below to open the scheduler.';
+      descriptionEl.textContent = 'Choose the matching service below to open the scheduler, or return to the services page and join the waitlist.';
     }
     if (summaryEl) {
       summaryEl.innerHTML = `
         <p><strong>No service was passed in the URL.</strong></p>
-        <p>Use the service list below, or go back to Services and choose the right session before booking.</p>
+        <p>Use the service list below, or go back to Services and choose the right session before the scheduler opens.</p>
       `;
     }
     if (schedulerEl) {
@@ -465,8 +398,6 @@
 
   setCurrentYear();
   hydratePricing();
-  hydrateFoundingBanner();
-  hydratePaymentLinks();
   bindForms();
   renderBookedPage();
   markCurrentNav();

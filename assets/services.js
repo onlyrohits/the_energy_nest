@@ -1,5 +1,5 @@
 // Service types describe the work.
-// Purchase options describe how people buy the work.
+// Pricing labels are display values only.
 window.EnergyNestOffers = [
   {
     "slug": "four-pack",
@@ -8,7 +8,6 @@ window.EnergyNestOffers = [
     "badge": "Most popular",
     "summary": "Best for steady momentum and the offer to steer toward.",
     "note": "About $100/session.",
-    "ctaLabel": "Choose package",
     "directoryOrder": 1
   },
   {
@@ -18,7 +17,6 @@ window.EnergyNestOffers = [
     "badge": "Standard",
     "summary": "The standard list price for one focused hour.",
     "note": "A single 60-minute session.",
-    "ctaLabel": "Choose single session",
     "directoryOrder": 2
   },
   {
@@ -26,9 +24,8 @@ window.EnergyNestOffers = [
     "pricingKey": "membership",
     "title": "Monthly membership",
     "badge": "Recurring",
-    "summary": "2 sessions/mo + async check-in.",
+    "summary": "2 sessions per month.",
     "note": "Recurring billing.",
-    "ctaLabel": "Choose membership",
     "directoryOrder": 3
   },
   {
@@ -38,29 +35,16 @@ window.EnergyNestOffers = [
     "badge": "First session only",
     "summary": "A softer first session for people who want to try the work.",
     "note": "One-time only, once per client.",
-    "ctaLabel": "Choose intro offer",
     "directoryOrder": 4
   },
   {
-    "slug": "scholarship",
-    "pricingKey": "scholarship",
-    "title": "Scholarship / equity spot",
+    "slug": "supported-rate",
+    "pricingKey": "supportedRate",
+    "title": "Supported rate",
     "badge": "Limited",
     "summary": "A few spots each month, not the default menu.",
-    "note": "$40-$60 range.",
-    "ctaLabel": "Ask about scholarship",
+    "note": "$40-$60 range, by request.",
     "directoryOrder": 5
-  },
-  {
-    "slug": "founding-session",
-    "pricingKey": "foundingSingle",
-    "title": "Founding member session",
-    "badge": "Founding pricing",
-    "summary": "First 20 clients only.",
-    "note": "$90/session.",
-    "ctaLabel": "Use founding pricing",
-    "directoryOrder": 0,
-    "promoOnly": true
   }
 ];
 
@@ -77,14 +61,13 @@ window.EnergyNestServices = [
       "Perspective"
     ],
     "badge": "Grounding support",
-    "paymentKey": "supportive-guidance",
     "schedulerKey": "supportive-guidance",
     "purchaseOptions": [
       "four-pack",
       "single-session",
       "membership",
       "intro-session",
-      "scholarship"
+      "supported-rate"
     ],
     "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A steady place to talk, sort, and exhale without having to perform being okay.",
@@ -106,14 +89,13 @@ window.EnergyNestServices = [
     "practical": [
       "60-minute online session via video link.",
       "Sessions happen in your local time zone.",
-      "Stripe handles payment before the scheduler opens."
+      "The waitlist opens first when times are ready."
     ],
     "notes": [
       "TODO: confirm licensure before calling this counseling or therapy.",
       "If you are in crisis in the US, call or text 988."
     ],
     "longDescription": "A calm conversation space to make sense of pressure, decision fatigue, and the feeling that you are always one tab away from collapse. Compassionate listening and reflective guidance for the mental load that builds around deadlines, releases, and life outside work.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_SUPPORTIVE_GUIDANCE",
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_SUPPORTIVE_GUIDANCE"
   },
   {
@@ -128,14 +110,13 @@ window.EnergyNestServices = [
       "Balance"
     ],
     "badge": "Energy reset",
-    "paymentKey": "reiki",
     "schedulerKey": "reiki",
     "purchaseOptions": [
       "four-pack",
       "single-session",
       "membership",
       "intro-session",
-      "scholarship"
+      "supported-rate"
     ],
     "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A quiet distance session meant to support rest, breath, and receptive attention.",
@@ -157,13 +138,12 @@ window.EnergyNestServices = [
     "practical": [
       "60-minute online session via video link.",
       "Distance work means you can stay home and rest.",
-      "Stripe handles payment before the scheduler opens."
+      "The waitlist opens first when times are ready."
     ],
     "notes": [
       "Reiki is a complementary practice for relaxation and wellbeing."
     ],
     "longDescription": "Gentle energy work designed to help you soften, settle, and receive without having to perform or explain. A restful distance session for screen fatigue, tension, and the kind of stress that does not clock out when you do.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_REIKI",
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_REIKI"
   },
   {
@@ -178,14 +158,13 @@ window.EnergyNestServices = [
       "Calm"
     ],
     "badge": "Shared pause",
-    "paymentKey": "meditate-together",
     "schedulerKey": "meditate-together",
     "purchaseOptions": [
       "four-pack",
       "single-session",
       "membership",
       "intro-session",
-      "scholarship"
+      "supported-rate"
     ],
     "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A grounded practice where nothing needs to be impressive and nothing needs to be forced.",
@@ -207,13 +186,12 @@ window.EnergyNestServices = [
     "practical": [
       "60-minute online session via video link.",
       "A simple practice with no prior experience needed.",
-      "Stripe handles payment before the scheduler opens."
+      "The waitlist opens first when times are ready."
     ],
     "notes": [
       "You do not have to do this perfectly to get something from it."
     ],
     "longDescription": "A guided meditation circle with breathing, silence, and a gentle closing that feels like a soft landing. A shared 60-minute practice for people who want company while they slow down and let their nervous system unclench.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_MEDITATE_TOGETHER",
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_MEDITATE_TOGETHER"
   },
   {
@@ -228,14 +206,13 @@ window.EnergyNestServices = [
       "Grace"
     ],
     "badge": "Closing ritual",
-    "paymentKey": "set-good-intention",
     "schedulerKey": "set-good-intention",
     "purchaseOptions": [
       "four-pack",
       "single-session",
       "membership",
       "intro-session",
-      "scholarship"
+      "supported-rate"
     ],
     "priceNote": "Premium pricing options are listed on the Services page.",
     "whatIs": "A closing ritual that helps you leave the day with intention instead of carrying it everywhere.",
@@ -257,13 +234,12 @@ window.EnergyNestServices = [
     "practical": [
       "60-minute online session via video link.",
       "A simple way to mark transitions and clear mental residue.",
-      "Stripe handles payment before the scheduler opens."
+      "The waitlist opens first when times are ready."
     ],
     "notes": [
       "Small rituals can change the texture of the week."
     ],
     "longDescription": "A focused closing practice that turns the end of the week into a gentle threshold rather than a crash landing. A weekly ritual to pause, clear the desk of the day, and choose one true direction before you move on.",
-    "paymentLinkUrl": "https://buy.stripe.com/REPLACE_WITH_STRIPE_LINK_SET_GOOD_INTENTION",
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_SET_GOOD_INTENTION"
   },
   {

@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booked - The Energy Nest</title>
-    <meta name="description" content="Post-payment confirmation and scheduling for The Energy Nest sessions.">
+    <meta name="description" content="Waitlist and scheduling shell for The Energy Nest sessions.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#F7F3EE">
     <link rel="canonical" href="https://theenergynest.com/booked/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Booked - The Energy Nest">
-    <meta property="og:description" content="Post-payment confirmation and scheduling for The Energy Nest sessions.">
+    <meta property="og:description" content="Waitlist and scheduling shell for The Energy Nest sessions.">
     <meta property="og:url" content="https://theenergynest.com/booked/">
     <meta property="og:image" content="https://theenergynest.com/assets/og-image.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Booked - The Energy Nest">
-    <meta name="twitter:description" content="Post-payment confirmation and scheduling for The Energy Nest sessions.">
+    <meta name="twitter:description" content="Waitlist and scheduling shell for The Energy Nest sessions.">
     <meta name="twitter:image" content="https://theenergynest.com/assets/og-image.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,14 +41,14 @@
     <a class="nav-link" data-nav-link href="../services/" aria-current="page">Services</a>
     <a class="nav-link" data-nav-link href="../about/">About</a>
     <a class="nav-link" data-nav-link href="../faq/">FAQ</a>
-    <a class="nav-button" href="../services/">Book</a>
+    <a class="nav-button" href="/#newsletter">Book</a>
   </nav>
 </header>
         <section class="booked-hero panel" aria-labelledby="booked-title">
   <div>
     <p class="eyebrow">Booking complete</p>
     <h1 id="booked-title" data-booked-title>Thanks. Your next step is to pick a time.</h1>
-    <p class="lead" data-booked-description>If you just finished payment, choose the matching service below and schedule your 60-minute online session in your local time zone.</p>
+    <p class="lead" data-booked-description>Choose the matching service below if you need the scheduler, or return to the services page and join the waitlist.</p>
     <div class="pill-row">
       <span class="pill">Online via video link</span>
       <span class="pill">Local timezone</span>
@@ -68,8 +68,8 @@
 <section class="section panel scheduler-shell" aria-labelledby="scheduler-title" data-booked-shell>
   <div class="section-head">
     <p class="section-kicker">Scheduler</p>
-    <h2 id="scheduler-title">Pick your time after payment.</h2>
-    <p class="section-copy">If the embed is not configured yet, the note below will remind the operator which link to paste into <code>assets/config.js</code>.</p>
+    <h2 id="scheduler-title">Pick your time when the scheduler is ready.</h2>
+    <p class="section-copy">If the embed is not configured yet, the note below will remind the team which scheduler link to paste into <code>assets/config.js</code>.</p>
   </div>
   <div class="scheduler-fallback" data-booked-scheduler>
     <p class="mini-label">Ready when configured</p>
@@ -81,7 +81,7 @@
   <div class="section-head">
     <p class="section-kicker">Need to start over?</p>
     <h2 id="booked-note-title">Return to services if the wrong page opened.</h2>
-    <p class="section-copy">This page is a friendly post-payment destination. Because the site is static, it cannot hard-enforce the gate without a backend.</p>
+    <p class="section-copy">This page is a neutral handoff for scheduling and waitlist routing. Because the site is static, it cannot hard-enforce the gate without a backend.</p>
   </div>
   <div class="inline-actions">
     <a class="button secondary" id="cancel" href="../services/">Back to services</a>

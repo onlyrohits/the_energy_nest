@@ -1056,32 +1056,6 @@ select:focus-visible {
   line-height: 1.62;
 }
 
-.founding-banner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 14px;
-  padding: 18px 20px;
-  margin-bottom: 16px;
-}
-
-.founding-banner[hidden] {
-  display: none !important;
-}
-
-.founding-banner .banner-copy {
-  display: grid;
-  gap: 6px;
-}
-
-.founding-banner .banner-copy p {
-  margin: 0;
-}
-
-.founding-banner .banner-close {
-  align-self: flex-start;
-}
-
 .site-footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
