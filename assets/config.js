@@ -51,7 +51,6 @@ window.EnergyNestConfig = {
   },
   "schedulerLinks": {
     "supportive-guidance": "https://cal.com/REPLACE_WITH_CAL_LINK_SUPPORTIVE_GUIDANCE",
-    "reiki": "https://cal.com/REPLACE_WITH_CAL_LINK_REIKI",
     "meditate-together": "https://cal.com/REPLACE_WITH_CAL_LINK_MEDITATE_TOGETHER",
     "set-good-intention": "https://cal.com/REPLACE_WITH_CAL_LINK_SET_GOOD_INTENTION",
     "single-session": "https://cal.com/REPLACE_WITH_CAL_LINK_SINGLE_SESSION",

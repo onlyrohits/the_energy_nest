@@ -517,7 +517,7 @@ function socialAssetPlan() {
       background: true,
       layers: [
         { kind: 'horizontal', width: 1060, height: 354, x: 760, y: 560 },
-        { kind: 'text', width: 900, height: 180, x: 780, y: 820, title: 'A calm place to land between deploys.', subtitle: 'Supportive guidance, Reiki, readings, meditation, intention-setting.', eyebrow: 'The Energy Nest', align: 'left', titleSize: 66, subtitleSize: 30, eyebrowSize: 22, card: null },
+        { kind: 'text', width: 900, height: 180, x: 780, y: 820, title: 'A calm place to land between deploys.', subtitle: 'Supportive guidance, readings, meditation, intention-setting.', eyebrow: 'The Energy Nest', align: 'left', titleSize: 66, subtitleSize: 30, eyebrowSize: 22, card: null },
       ],
     },
     {

@@ -99,54 +99,6 @@ window.EnergyNestServices = [
     "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_SUPPORTIVE_GUIDANCE"
   },
   {
-    "slug": "reiki",
-    "title": "Reiki (Distance Session)",
-    "tagline": "Rebalance a nervous system that has been running hot.",
-    "blurb": "A restful distance session for screen fatigue, tension, and the kind of stress that does not clock out when you do.",
-    "intro": "Gentle energy work designed to help you soften, settle, and receive without having to perform or explain.",
-    "cardTags": [
-      "Rest",
-      "Release",
-      "Balance"
-    ],
-    "badge": "Energy reset",
-    "schedulerKey": "reiki",
-    "purchaseOptions": [
-      "four-pack",
-      "single-session",
-      "membership",
-      "intro-session",
-      "supported-rate"
-    ],
-    "priceNote": "Premium pricing options are listed on the Services page.",
-    "whatIs": "A quiet distance session meant to support rest, breath, and receptive attention.",
-    "whatHappens": [
-      "You arrive, get comfortable, and do less.",
-      "The session focuses on rest, breath, and receiving.",
-      "You close with a gentle landing so you can re-enter your day slowly."
-    ],
-    "whoFor": [
-      "Nervous system overload.",
-      "People who carry tension in their shoulders, jaw, or sleep.",
-      "Anyone who wants a calm reset without needing to talk the whole time."
-    ],
-    "notFor": [
-      "A medical diagnosis or cure.",
-      "Emergency or crisis care.",
-      "A replacement for clinical treatment."
-    ],
-    "practical": [
-      "60-minute online session via video link.",
-      "Distance work means you can stay home and rest.",
-      "The waitlist opens first when times are ready."
-    ],
-    "notes": [
-      "Reiki is a complementary practice for relaxation and wellbeing."
-    ],
-    "longDescription": "Gentle energy work designed to help you soften, settle, and receive without having to perform or explain. A restful distance session for screen fatigue, tension, and the kind of stress that does not clock out when you do.",
-    "calLink": "https://cal.com/REPLACE_WITH_CAL_LINK_REIKI"
-  },
-  {
     "slug": "meditate-together",
     "title": "Meditate Together",
     "tagline": "Log off and land, live and guided, together.",

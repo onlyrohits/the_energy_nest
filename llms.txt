@@ -1,6 +1,6 @@
 # The Energy Nest
 
-> Online reiki, supportive guidance, guided meditation, and intention-setting
+> Supportive guidance, guided meditation, and intention-setting
 > sessions for software professionals. US-based, sessions delivered online.
 > Complementary practices for relaxation and wellbeing - not medical care.
 
@@ -9,7 +9,6 @@ All sessions are 60 minutes. Adults 18+ only.
 
 ## Services
 - [Supportive Guidance](https://theenergynest.com/services/supportive-guidance/): reflective listening for work-related mental load
-- [Reiki (distance session)](https://theenergynest.com/services/reiki/): distance energy work for rest and screen fatigue
 - [Meditate Together](https://theenergynest.com/services/meditate-together/): shared guided meditation
 - [Set a Good Intention](https://theenergynest.com/services/set-good-intention/): weekly intention-setting ritual
 - [Find Purpose Together](https://theenergynest.com/services/find-purpose-together/): in-person gathering, waitlist only

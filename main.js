@@ -81,7 +81,7 @@
         name: config.brandName || 'The Energy Nest',
         url: config.siteUrl || 'https://theenergynest.com/',
         email: config.supportEmail || 'hello@theenergynest.com',
-        description: 'The Energy Nest offers supportive guidance, reiki, meditation, and intention-setting for software professionals who spend all day in code and need a quieter place to land.'
+        description: 'The Energy Nest offers supportive guidance, meditation, and intention-setting for software professionals who spend all day in code and need a quieter place to land.'
       });
     }
 
